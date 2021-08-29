@@ -1,0 +1,31 @@
+{
+    "title": "Rural Water District",
+    "portrait": "profile-pic.jpg",
+    "header": "askfjghasldgkjsfdgs",
+    "about": "sdhfksldfksldfgkjshdfgs",
+    "player": {
+      "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/zprRZ2wFQD4\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "caption": "Townes Van Zandt"
+    },
+    "menu": [
+        { "text":"Shop", "path":"https://store.phoebefuckingbridgers.com/"},
+        { "text":"Bandcamp", "path":"https://killiehawk.bandcamp.com/"},
+        { "text":"Soundcloud", "path":"https://soundcloud.com/phoebebridgers"}
+    ],
+    "contact": [
+      { "name":"email", "link":"/" }
+    ],
+    "socials": [
+      { "platform":"twitter", "text":"@traitorjoe", "path":"https://twitter.com/phoebe_bridgers?lang=en", "show":"true" },
+      { "platform":"instagram", "text":"phoebebridgers", "path":"https://www.instagram.com/phoebebridgers/?hl=en", "show":"false" },
+      { "platform":"tiktok", "text":"phoebebridgers69", "path":"https://www.tiktok.com/@phoebebridgers69?lang=en", "show":"true" }
+    ],
+    "seo": {
+        "description": "A starter blog demonstrating what Gatsby can do.",
+        "siteUrl": "https://gatsbystarterblogsource.gatsbyjs.io/",
+        "tags": [
+            "Tag"
+        ]
+    }
+    
+  }
