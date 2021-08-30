@@ -1,0 +1,110 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+publish_mode: editorial_workflow
+media_folder: public/content/assets
+public_folder: content/assets
+
+collections:
+  - label: "Data"
+    name: "data"
+    files: 
+      - label: "Metadata"
+        name: "metadata"
+        file: "public/content/meta.json"
+        format: json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Portrait, name: portrait, widget: image, required: false }
+          - { label: Header, name: header, widget: markdown, required: false,  minimal: true, buttons: [bold, italic, link]}
+          - { label: About, name: about, widget: markdown, required: false,  minimal: true, buttons: [bold, italic, link]}
+          - label: "Player"
+            name: "player"
+            widget: object
+            required: false
+            fields: 
+              - { label: Embed, name: embed, widget: string }
+              - { label: Caption, name: caption, widget: markdown, required: false,  minimal: true, buttons: [bold, italic, link]}
+          - label: "Links"
+            name: "links"
+            widget: list
+            required: false
+            fields:
+              - { label: Text, name: text, widget: string }
+              - { label: URL, name: url, widget: string }  
+          - label: "Contact"
+            name: "contact"
+            widget: list
+            required: false
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }  
+          - label: "Socials"
+            name: "socials"
+            widget: list
+            required: false
+            fields:
+              - label: "Platform"
+                name: "platform"
+                widget: select
+                options:
+                  - { label: Facebook, value: "facebook" }
+                  - { label: Instagram, value: "instagram" }
+                  - { label: Twitter, value: "twitter" }
+                  - { label: TikTok, value: "tiktok" }
+                  - { label: Bandcamp, value: "bandcamp" }
+                  - { label: Spotify, value: "spotify" }
+                  - { label: SoundCloud, value: "soundcloud" }
+                  - { label: Apple Music, value: "apple" }
+              - { label: Text, name: text, widget: string }  
+              - { label: URL, name: url, widget: string }  
+              - { label: Show, name: show, widget: boolean }
+          - label: "SEO"
+            name: "seo"
+            required: false
+            fields:
+              - { label: Description, name: description, widget: string }
+              - { label: URL, name: url, widget: string }   
+              - label: "Dates"
+                name: "tags"
+                widget: text
+      - label: "Schedule"
+        name: "schedule"
+        file: "public/content/schedule.json"
+        format: json
+        fields:
+          - label: "Dates"
+            name: "dates"
+            widget: list
+            required: false
+            fields:
+              - { label: Date, name: date, widget: datetime }
+              - { label: Venue, name: venue, widget: string }
+              - { label: Location, name: location, widget: string }
+              - { label: Link, name: link, widget: string }
+      - label: "Gallery" 
+        name: "gallery"
+        file: "public/content/gallery.json"
+        format: json
+        fields: 
+          - label: "Images"
+            name: "images"
+            widget: list
+            required: false
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Caption, name: caption, widget: markdown, required: false,  minimal: true, buttons: [bold, italic, link]}
+  - label: "Blog Posts"
+    name: "posts"
+    folder: "public/content/content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: hidden, default: "blog" }
+      - { label: "Title", name: "title", widget: string }
+      - { label: "Publish Date", name: "date", widget: datetime }
+      - { label: "Description", name: "description", widget: string }
+      - { label: "Body", name: "body", widget: markdown }
