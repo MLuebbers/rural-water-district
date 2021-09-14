@@ -1,4 +1,3 @@
-
 export default function Layout({ children }) {
     return (
         <>
@@ -6,5 +5,4 @@ export default function Layout({ children }) {
         </>
     );
 }
-
   

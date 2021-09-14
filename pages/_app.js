@@ -1,6 +1,14 @@
-import '../styles/global.css'
+import { ThemeProvider } from '@emotion/react';
+import theme from '../theme.js';
 
-export default function App({ Component, pageProps }) {
-    return <Component {...pageProps} />
+export default function FlaxApp({ Component, pageProps }) {
+    return (
+        <ThemeProvider theme={ theme }>
+            <Component { ...pageProps } />
+        </ThemeProvider>
+    );
 }
-  
+
+export function reportWebVitals(metric) {
+    console.log(metric)
+  }
